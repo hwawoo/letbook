@@ -1,0 +1,12 @@
+letbook\PayMade.class
+letbook\AbstractEvent$1.class
+letbook\BookReturned.class
+letbook\PolicyHandler.class
+letbook\config\kafka\KafkaProcessor.class
+letbook\BookStoreController.class
+letbook\BookStoreRepository.class
+letbook\AbstractEvent.class
+letbook\BookStore.class
+letbook\BookImported.class
+letbook\BookExported.class
+letbook\BookStoreApplication.class
