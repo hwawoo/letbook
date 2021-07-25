@@ -1,0 +1,11 @@
+letbook\PayMade.class
+letbook\RentalHist.class
+letbook\BookExported.class
+letbook\AbstractEvent$1.class
+letbook\RentalHistRepository.class
+letbook\PolicyHandler.class
+letbook\config\kafka\KafkaProcessor.class
+letbook\RentalHistApplication.class
+letbook\RentalHistViewHandler.class
+letbook\AbstractEvent.class
+letbook\BookImported.class
