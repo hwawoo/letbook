@@ -1,0 +1,11 @@
+letbook\PayMade.class
+letbook\PaymentApplication.class
+letbook\AbstractEvent$1.class
+letbook\PolicyHandler.class
+letbook\config\kafka\KafkaProcessor.class
+letbook\BookRented.class
+letbook\PaymentRepository.class
+letbook\PaymentService.class
+letbook\AbstractEvent.class
+letbook\Payment.class
+letbook\PaymentController.class
