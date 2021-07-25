@@ -1,0 +1,12 @@
+letbook\BookRent.class
+letbook\AbstractEvent$1.class
+letbook\BookReturned.class
+letbook\PolicyHandler.class
+letbook\config\kafka\KafkaProcessor.class
+letbook\external\Payment.class
+letbook\AbstractEvent.class
+letbook\external\PaymentService.class
+letbook\BookRentService.class
+letbook\BookRented.class
+letbook\external\PaymentServiceFallback.class
+letbook\BookRentApplication.class
