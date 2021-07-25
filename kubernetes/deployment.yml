@@ -1,0 +1,228 @@
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: BookRent
+  labels:
+    app: BookRent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: BookRent
+  template:
+    metadata:
+      labels:
+        app: BookRent
+    spec:
+      containers:
+        - name: BookRent
+          image: username/BookRent:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: RentalHist
+  labels:
+    app: RentalHist
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: RentalHist
+  template:
+    metadata:
+      labels:
+        app: RentalHist
+    spec:
+      containers:
+        - name: RentalHist
+          image: username/RentalHist:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: BookStore
+  labels:
+    app: BookStore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: BookStore
+  template:
+    metadata:
+      labels:
+        app: BookStore
+    spec:
+      containers:
+        - name: BookStore
+          image: username/BookStore:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Payment
+  labels:
+    app: Payment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: Payment
+  template:
+    metadata:
+      labels:
+        app: Payment
+    spec:
+      containers:
+        - name: Payment
+          image: username/Payment:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: BookRent
+  labels:
+    app: BookRent
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: BookRent
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: RentalHist
+  labels:
+    app: RentalHist
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: RentalHist
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: BookStore
+  labels:
+    app: BookStore
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: BookStore
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: Payment
+  labels:
+    app: Payment
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: Payment
+
